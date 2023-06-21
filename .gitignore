@@ -1,2 +1,5 @@
 # ignoring my planning document
 PlanningDocument.txt
+
+# ignoring the ds store file
+.DS_Store
