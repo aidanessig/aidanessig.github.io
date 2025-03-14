@@ -26,7 +26,7 @@ const AboutMe = () => {
           sx={{
             width: 150,
             height: 150,
-            borderRadius: "50%", // Circular image
+            borderRadius: "50%",
             objectFit: "cover",
             border: "3px solid white",
             marginBottom: 2,

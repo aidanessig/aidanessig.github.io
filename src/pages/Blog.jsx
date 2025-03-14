@@ -49,11 +49,11 @@ const Blog = () => {
                 src="/images/neu.jpg"
                 alt="Northeastern University"
                 sx={{
-                  width: "100%", // Responsive
-                  maxWidth: "500px", // Limits size on larger screens
-                  borderRadius: "8px", // Rounded corners
+                  width: "100%",
+                  maxWidth: "500px", 
+                  borderRadius: "8px", 
                   display: "block",
-                  margin: "20px auto", // Centered
+                  margin: "20px auto",
                 }}
                />
                <Typography variant="body1">
