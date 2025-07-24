@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reddit Race - Aidan Essig</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <main>
+    <p class="header-label">Aidan Essig · Senior at Northeastern University</p>
+
+    <h1>Reddit Race</h1>
+    <p class="subtitle"><a href="https://reddit-race.com" target="_blank">reddit-race.com</a></p>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/projects/">← Back to Projects</a>
+    </nav>
+
+    <p>Inspired by <a href="https://en.wikipedia.org/wiki/Wikiracing" target="_blank">WikiRacing</a>, Reddit Race challenges you to get from one subreddit to another through associated communities. The purpose of this is to explore the complicated network of Reddit and how you can actually draw connections between dissimilar subreddits.</p>
+
+    <p>From a technical standpoint, I wanted to explore whether we could use semantic heuristics like tone, topic, or writing style to guide efficient navigation through this network. I experimented with A* pathfinding using features like sentiment and social language to reduce search space compared to traditional breadth-first search.</p>
+
+    <p>The project pulls from a dataset of over 850,000 subreddit-to-subreddit hyperlinks, each annotated with an 86-dimensional feature vector describing the language in the source post. From this, I built a semantic similarity graph and tested heuristic-based A* search on it.</p>
+
+    <p>The site is live and playable, allowing you to choose a target and goal subreddit, working through their associated subreddits to find a link between the two.</p>
+
+    <p>For the the data processing and algorithm portion of this project, I looked at:</p>
+    <ul>
+      <li>A dataset from a Reddit hyperlink network</li>
+      <li>Post-level feature vectors (sentiment, topic, tone, etc.)</li>
+      <li>Custom A* heuristics built from cosine similarity of feature vectors</li>
+    </ul>
+
+    <p>And the site was built using React.</p>
+
+    <p>You can read more about the experiments and heuristics in <a href="/assets/documents/reddit-race-paper.pdf" target="_blank">my paper</a>.</p>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>Thank you!</p>
+      <div class="social-icons">
+        <a href="mailto:aidanessig@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/aidanessig" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/aidanessig" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/aidanessig" target="_blank"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

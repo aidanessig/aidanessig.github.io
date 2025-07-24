@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YouTube Default Video Speed - Aidan Essig</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <main>
+    <p class="header-label">Aidan Essig · Senior at Northeastern University</p>
+
+    <h1>YouTube Default Video Speed</h1>
+    <p class="subtitle">
+      <a href="https://chromewebstore.google.com/detail/youtube-default-video-spe/hjeoljpoeejbcphgkdekeaoddggoekhp" target="_blank" rel="noopener noreferrer">
+        View on Chrome Web Store
+      </a>
+    </p>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/projects/">← Back to Projects</a>
+    </nav>
+
+    <p>
+      This is a Chrome extension I built to make watching youtube a little easier. Instead of adjusting the speed manually every time, this extension lets you save a default playback rate for individual videos or entire channels.
+    </p>
+
+    <p>
+      Once installed, clicking the extension icon opens a panel where you can choose a default speed (e.g. 1.5x or 2x). You can optionally apply this to the whole channel. The next time you visit that video or another from the same channel, the speed is automatically set.
+    </p>
+
+    <p>
+      All preferences are stored locally in browser storage, and you can remove saved entries individually or reset everything with one click.
+    </p>
+
+    <h2>How it Works</h2>
+    <p>
+      The extension uses a content script to interact directly with the YouTube player. It detects when the video is loaded and opens the settings panel, clicking through the playback speed options, and sets the desired value.
+    </p>
+    <p>
+      From the popup interface, it reads the current video and channel, shows saved state, and lets you update or clear the preference. All logic utilizes the standard DOM APIs and the Chrome Extension API.
+    </p>
+
+    <h2>Gallery</h2>
+    <figure>
+      <img src="/assets/images/IMG A 1280x800.png" alt="Example of a saved video speed" />
+      <figcaption>Speed saved for an individual video and list of current saved channels or videos</figcaption>
+    </figure>
+
+    <figure>
+      <img src="/assets/images/IMG B 1280x800.png" alt="Example of a saved channel speed" />
+      <figcaption>View when not on a YouTube video</figcaption>
+    </figure>
+
+    <figure>
+      <img src="/assets/images/IMG C 1280x800.png" alt="Extension panel with saved data" />
+      <figcaption>Empty saved list and option to save speed for first time</figcaption>
+    </figure>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>Thank you!</p>
+      <div class="social-icons">
+        <a href="mailto:aidanessig@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/aidanessig" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/aidanessig" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/aidanessig" target="_blank"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
