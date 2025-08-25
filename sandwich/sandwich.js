@@ -345,7 +345,15 @@ function showToast(message, success = false) {
   setTimeout(() => { toast.className = ""; }, 1500);
 }
 
-loadWords();
+document.addEventListener("DOMContentLoaded", () => {
+  // pause until user starts
+  document.getElementById("start-btn").onclick = () => {
+    document.getElementById("landing").style.display = "none";
+    const hintBtn = document.getElementById("hint-btn");
+    if (hintBtn) hintBtn.style.display = "inline-block";
+    loadWords(); // load words and start game
+  };
+});
 
 document.addEventListener("keydown", e => {
   if (/^[a-zA-Z]$/.test(e.key)) handleKey(e.key.toLowerCase());
