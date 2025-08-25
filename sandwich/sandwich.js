@@ -316,25 +316,24 @@ function shareResults() {
 
   const fmt = val => (val ? parseFloat(val).toFixed(1) : "–");
 
-  const title = `🥪 Sandwich (${today})`;
-  const text =
+  const shareText =
+    `🥪 Sandwich (${today})\n\n` +
     `✅ Finished in ${elapsed}s with ${hints} hint(s)\n` +
     `🔡 4-letter: ${fmt(roundTimes[4])}s, ` +
     `5-letter: ${fmt(roundTimes[5])}s, ` +
     `6-letter: ${fmt(roundTimes[6])}s`;
 
-  if (navigator.share) {
-    navigator.share({
-      title: title,
-      text: text,
-    }).catch(err => {
-      console.error("Share failed", err);
-      navigator.clipboard.writeText(`${title}\n${text}`);
-      alert("Results copied to clipboard!");
-    });
+  const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  if (isMobile && navigator.share) {
+    navigator.share({ text: shareText })
+      .catch(err => {
+        navigator.clipboard.writeText(shareText);
+        showToast("Results copied to clipboard!", true);
+      });
   } else {
-    navigator.clipboard.writeText(`${title}\n${text}`);
-    alert("Results copied to clipboard!");
+    navigator.clipboard.writeText(shareText);
+    showToast("Results copied to clipboard!", true);
   }
 }
 
