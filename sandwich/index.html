@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sandwich</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="sandwich.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+</head>
+<body>
+  <!-- Toast popup for quick messages -->
+  <div id="toast"></div>
+
+  <main id="sandwich-game">
+    <h1>Sandwich</h1>
+    <p class="subtitle">Guess the word! Start with 4 letters, then 5, then 6.</p>
+
+    <div id="timer">0.0s</div>
+    <div id="word-length"></div>
+
+    <div id="board"></div>
+
+    <div id="keyboard"></div>
+
+    <p id="next-instructions" class="instructions"></p>
+
+    <div id="controls">
+      <button id="hint-btn">Hint</button>
+    </div>
+
+    <div id="definitions"></div>
+  </main>
+
+  <script src="sandwich.js"></script>
+</body>
+</html>

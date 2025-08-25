@@ -1,0 +1,199 @@
+/* Board */
+#board {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.box {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+  background: #fff;
+  transition: transform 0.2s ease;
+}
+
+.box.locked {
+  background: #dfdbd2;
+  font-weight: bold;
+}
+
+/* Keyboard */
+#keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem auto;
+  gap: 0.4rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.kb-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.key {
+  flex: 1;
+  min-width: 40px;
+  padding: 0.8rem 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #aaa;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.key:hover {
+  background: #dfdbd2;
+}
+
+.key.wide-key {
+  flex: 1.5;
+  min-width: 60px;
+  padding: 0.8rem 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Controls */
+#controls {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+#hint-btn, #next-btn, #share-btn, #restart-btn {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #0033aa;
+  color: #fff;
+  cursor: pointer;
+  margin: 0.5rem;
+}
+#hint-btn:hover, #next-btn:hover, #share-btn:hover, #restart-btn:hover {
+  background: #002277;
+}
+
+button, .key {
+  touch-action: manipulation;
+}
+
+
+/* Instructions */
+.instructions {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #2e7d32;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  display: none;
+}
+.instructions strong {
+  font-weight: bold;
+}
+
+/* Animations */
+.shake {
+  animation: shake 0.4s;
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+.flash {
+  animation: flash 0.4s;
+}
+@keyframes flash {
+  0% { background: #b4ffb4; }
+  100% { background: #fff; }
+}
+.flash-green {
+  animation: flash-green 0.6s;
+}
+@keyframes flash-green {
+  0% { background: #b4ffb4; }
+  100% { background: #fff; }
+}
+
+/* Popup modal */
+#popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border: 2px solid #333;
+  padding: 2rem;
+  text-align: center;
+  display: none;
+  z-index: 1000;
+}
+#popup.show {
+  display: block;
+}
+
+/* Toast messages */
+#toast {
+  position: fixed;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  transition: top 0.3s ease;
+  z-index: 2000;
+}
+#toast.show {
+  top: 20px;
+}
+#toast.success {
+  background: #2e7d32;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .box {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 1.5rem;
+  }
+
+  .key {
+    font-size: 0.9rem;
+    min-width: 32px;
+    padding: 0.7rem 0.5rem;
+  }
+
+  .key.wide-key {
+    min-width: 48px;
+    flex: 1.4;
+    padding: 0.7rem 0.5rem;
+  }
+
+  #controls button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
